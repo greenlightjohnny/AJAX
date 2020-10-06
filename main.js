@@ -3,7 +3,7 @@ const button = document.getElementById("button");
 function water() {
   let xhr = new XMLHttpRequest();
   /// Open function, takes in type, url/file, async or not;
-  xhr.open("GET", "borinsg.text", true);
+  xhr.open("GET", "boring.text", true);
   console.log("READYSTATE", xhr.readyState);
 
   ////Optional loaders, spinny wheels!
