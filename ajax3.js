@@ -9,7 +9,7 @@ function loadUsers() {
       let users = JSON.parse(this.responseText);
       let out = "";
       users.map((i) => {
-        out += `<ul> <li>Login: ${i.login}</li></ul>`;
+        out += `<div class="user"> <img src="${i.avatar_url}" ></img></div>`;
       });
 
       userField.innerHTML = out;

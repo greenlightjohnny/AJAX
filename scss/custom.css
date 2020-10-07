@@ -1606,3 +1606,20 @@ pre code {
     margin-left: 91.6666666667%;
   }
 }
+#user {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#user .user {
+  display: flex;
+  flex: 1;
+  min-width: 100px;
+}
+#user .user img {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
