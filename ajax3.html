@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/scss/custom.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js"> -->
+    <link rel="stylesheet" href="./css/dark.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
     <title>Ajax to GitHub</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>hello</h1>
-        <button id=button1>Load GitHub Users</button>
+        <h1>Asynchronous, AJAX, Fetch</h1>
+        <p>Click a button to make a call and see the code</p>
+        <button id=button1>AJAX GitHub Users</button>
 
         <br><br>
         <h1>GitHub Users</h1>
@@ -20,7 +24,40 @@
         </div>
 
     </div>
+    <div class="container ajax allc">
+        <h2>AJAX GitHub API Call</h2>
+        <p>Using the basic XMLHttpRequest object to load user avatars from GitHub when the button is clicked. The basic
+            code is blow. Using Bootstrap 4 for some basic styling, and Highlightjs for the code block styling below.
+            Note there would normally be an "else" after the if block in case an error was received.</p>
+        <pre> <code class="js">
+            
+        const button = document.getElementById("button1");
+
+        function loadUsers() {
+            let xhr = new XMLHttpRequest();
+            let userField = document.getElementById("user");
+            xhr.open("GET", "https://api.github.com/users", true);
+            xhr.onload = function () {
+                if (this.status == 200) {
+                  let users = JSON.parse(this.responseText);
+                  let out = "";
+                  users.map((i) => {
+                     out += // loop over and and place data inside the out variable
+                  });
+                    userField.innerHTML = out;
+                }
+              };
+            
+              xhr.send();
+            }
+            
+        button.addEventListener("click", loadUsers);
+            </code></pre>
+    </div>
     <script src="ajax3.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
 
 </body>
 

@@ -1,6 +1,10 @@
 const button = document.getElementById("button1");
+const ajaxClass = document.querySelector(".ajax");
+const allC = document.querySelector(".allc");
 
 function loadUsers() {
+  allC.style.display = "none";
+  ajaxClass.style.display = "block";
   let xhr = new XMLHttpRequest();
   let userField = document.getElementById("user");
   xhr.open("GET", "https://api.github.com/users", true);
