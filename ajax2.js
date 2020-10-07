@@ -34,12 +34,16 @@ function loadUsers() {
       let usersField = document.getElementById("users");
 
       let users = JSON.parse(this.responseText);
-
+      let final = "";
       users.map((i) => {
-        let tag = document.createElement("h2");
-        tag.innerHTML = i.name;
-        usersField.appendChild(tag);
+        //usersField.appendChild(tag);
+        final += `<ul>
+        <li>ID: ${i.id}</li>
+        <li>ID: ${i.name}</li>
+        <li>ID: ${i.email}</li>
+        </ul>`;
       });
+      usersField.innerHTML = final;
     }
   };
 
